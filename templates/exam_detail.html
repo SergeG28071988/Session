@@ -1,11 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+{{ exam.subject }}
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container mt-5">
+  <h1 class="text-center">{{ exam.subject }}</h1><br>
+  <div class="alert alert-info">
+    <div class="row">
+      <div class="col">
+        <h4>Студент:</h4>
+        <p>{{ exam.student }}</p>
+      </div>
+      <div class="col">
+        <h4>Результат:</h4>
+        <p>{{ exam.result }}</p>
+      </div>
+      <div class="col">
+        <h4>Преподаватель:</h4>
+        <p>{{ exam.teacher }}</p>
+      </div>
+    </div>
+    <a href="/exams/{{ exam.id }}/delete" class="btn btn-danger">Удалить</a>  
+    <a href="/exams/{{ exam.id }}/update" class="btn btn-success">Изменить</a>  
+  </div>     
+</div>
+{% endblock %}
