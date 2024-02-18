@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Create Exam
+Update Exam
 {% endblock %}
 
 {% block content %}
 <br>
 <div class="container mt-5">
-    <h1 class="text-center">Create Exam</h1>
+    <h1 class="text-center">Update Exam</h1>
     <form method="POST" class="form">
         {{ form.csrf_token }}
         {{ form.hidden_tag() }}
